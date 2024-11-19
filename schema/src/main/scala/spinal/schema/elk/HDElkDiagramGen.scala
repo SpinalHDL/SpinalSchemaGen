@@ -1,6 +1,7 @@
 package spinal.schema.elk
 
 import spinal.core._
+import spinal.core.tools._
 import spinal.lib.IMasterSlave
 import java.io.{File, FileWriter}
 import scala.collection.mutable
