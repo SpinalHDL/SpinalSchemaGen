@@ -2,11 +2,13 @@
 
 lazy val root = (project in file("."))
   .settings(
-    name := "SpinalHDL Schemetic Generator",
-    organization := "com.github.spinalhdl",
+    name := "SpinalHDL Schema Gen",
+    description := "SpinalHDL Schemetic Generator",
+    organization := "com.github.readon",
     version := SchemaGenVersion.major,
     crossScalaVersions := SchemaGenVersion.compilers,
     scalaVersion := SchemaGenVersion.compilers(0),
+    versionScheme := Some("early-semver"),
 
     libraryDependencies ++= Seq(
       "org.scala-lang" % "scala-library" % scalaVersion.value,
@@ -61,4 +63,5 @@ lazy val root = (project in file("."))
     )
   )
 
+enablePlugins(JavaAppPackaging)
 fork := true
