@@ -1,4 +1,4 @@
-package spinal.lib.tools
+package spinal.schema.elk
 
 import spinal.core._
 import spinal.lib.{StreamFifoCC, master, slave}

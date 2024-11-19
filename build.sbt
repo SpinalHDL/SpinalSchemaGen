@@ -9,7 +9,7 @@ lazy val root = (project in file("."))
     scalaVersion := SchemaGenVersion.compilers(0),
 
     Compile / scalaSource := baseDirectory.value / "schema" / "src" / "main",
-    // Test / scalaSource := baseDirectory.value / "tester" / "src" / "main",
+    Test / scalaSource := baseDirectory.value / "schema" / "src" / "test",
 
     libraryDependencies += "com.github.spinalhdl" %% "spinalhdl-core" % SchemaGenVersion.spinal,
     libraryDependencies += "com.github.spinalhdl" %% "spinalhdl-lib"  % SchemaGenVersion.spinal,
