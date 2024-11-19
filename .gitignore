@@ -167,3 +167,6 @@ hs_err_pid*
 # End of https://www.toptal.com/developers/gitignore/api/sbt,scala,mill,visualstudiocode,intellij,metals
 
 .scala-build/
+.simWorkspace/
+*.v
+*.html
