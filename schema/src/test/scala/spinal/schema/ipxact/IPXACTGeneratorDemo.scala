@@ -93,8 +93,6 @@ class IPXACTGeneratorTestComponent extends Component {
 
 object IPXACTGeneratorDemo extends App {
 
-  // import spinal.schema.ipxact.IPXACTGenerator.IPXACTGenerator
-
   val componentRTL = SpinalConfig(
     mode = VHDL,
     oneFilePerComponent = false
