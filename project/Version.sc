@@ -9,12 +9,12 @@ object SchemaGenVersion {
   val compilers = conf.getStringList("compilers").asScala.toList
   val compilerIsRC = conf.getBoolean("compilerIsRC")
   
-  val spinal = conf.getBoolean("spinal")
+  val spinal = conf.getString("spinal")
 
   val isDev = conf.getBoolean("isDev")
   val isSnapshot = conf.getBoolean("isSnapshot")
   private def snapshot = if (isSnapshot) "-SNAPSHOT" else ""
-  private val major = conf.getString("major")
+  val major = conf.getString("major")
   val all         = if(isDev) "dev" else s"$major$snapshot"
   val schema      = all
 }
