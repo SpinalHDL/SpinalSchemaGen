@@ -1,5 +1,7 @@
-// SchemaGenVersion is defined in project/Version.scala
+import sbt._
+import xerial.sbt.Sonatype._
 
+// SchemaGenVersion is defined in project/Version.conf
 lazy val root = (project in file("."))
   .settings(
     name := "SpinalHDL Schema Gen",
@@ -26,11 +28,10 @@ lazy val root = (project in file("."))
     // Publishing settings
     publishMavenStyle := true,
 
-    publishTo := Some(if (isSnapshot.value) {
-      Opts.resolver.sonatypeSnapshots
-    } else {
-      Opts.resolver.sonatypeStaging
-    }),
+    sonatypeProfileName := "com.github.readon",
+    sonatypeProjectHosting := Some(GitHubHosting("Readon", "SpinalSchemaGen", "xydarcher@qq.com")),
+    publishTo := sonatypePublishToBundle.value,
+	sonatypeCredentialHost := "s01.oss.sonatype.org",
 
     credentials += Credentials(Path.userHome / ".sbt" / "sonatype_credentials"),
 
