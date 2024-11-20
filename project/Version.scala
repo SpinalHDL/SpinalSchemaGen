@@ -1,3 +1,4 @@
+import sbt._
 import com.typesafe.config._
 import sourcecode.File
 import sbt.io.Path
@@ -19,4 +20,20 @@ object SchemaGenVersion {
   val major = conf.getString("major")
   val all         = if(isDev) "dev" else s"$major$snapshot"
   val schema      = all
+   
+  def scalaXmlVersion(scalaVersion: String): String = {
+    CrossVersion.partialVersion(scalaVersion) match {
+      case Some((2, n)) if n >= 12 => "2.3.0" 
+      case Some((2, 11)) => "1.3.1"
+      case _ => throw new RuntimeException(s"Unsupported Scala version: $scalaVersion")
+    }
+  }
+   
+  def scalaParserCombinatorVersion(scalaVersion: String): String = {
+    CrossVersion.partialVersion(scalaVersion) match {
+      case Some((2, n)) if n >= 12 => "2.4.0" 
+      case Some((2, 11)) => "1.1.2"
+      case _ => throw new RuntimeException(s"Unsupported Scala version: $scalaVersion")
+    }
+  }
 }

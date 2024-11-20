@@ -5,7 +5,7 @@ lazy val root = (project in file("."))
     name := "SpinalHDL Schema Gen",
     description := "SpinalHDL Schemetic Generator",
     organization := "com.github.readon",
-    version := SchemaGenVersion.major,
+    version := SchemaGenVersion.schema,
     crossScalaVersions := SchemaGenVersion.compilers,
     scalaVersion := SchemaGenVersion.compilers(0),
     versionScheme := Some("early-semver"),
@@ -19,8 +19,8 @@ lazy val root = (project in file("."))
       compilerPlugin("com.github.spinalhdl" %% "spinalhdl-idsl-plugin" % SchemaGenVersion.spinal),
 
       "javax.xml.bind" % "jaxb-api" % "2.3.0",
-      "org.scala-lang.modules" %% "scala-xml" % "2.3.0",
-      "org.scala-lang.modules" %% "scala-parser-combinators" % "2.4.0"
+      "org.scala-lang.modules" %% "scala-xml" % SchemaGenVersion.scalaXmlVersion(scalaVersion.value),
+      "org.scala-lang.modules" %% "scala-parser-combinators" % SchemaGenVersion.scalaParserCombinatorVersion(scalaVersion.value)
     ),
 
     // Publishing settings
