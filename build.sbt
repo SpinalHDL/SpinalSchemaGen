@@ -6,7 +6,7 @@ lazy val root = (project in file("."))
   .settings(
     name := "SpinalHDL Schema Gen",
     description := "SpinalHDL Schemetic Generator",
-    organization := "com.github.readon",
+    organization := "io.github.readon",
     version := SchemaGenVersion.schema,
     crossScalaVersions := SchemaGenVersion.compilers,
     scalaVersion := SchemaGenVersion.compilers(0),
@@ -28,10 +28,9 @@ lazy val root = (project in file("."))
     // Publishing settings
     publishMavenStyle := true,
 
-    sonatypeProfileName := "com.github.readon",
     sonatypeProjectHosting := Some(GitHubHosting("Readon", "SpinalSchemaGen", "xydarcher@qq.com")),
     publishTo := sonatypePublishToBundle.value,
-	sonatypeCredentialHost := "s01.oss.sonatype.org",
+    sonatypeCredentialHost := sonatypeCentralHost,
 
     credentials += Credentials(Path.userHome / ".sbt" / "sonatype_credentials"),
 
