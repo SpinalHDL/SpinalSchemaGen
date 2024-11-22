@@ -6,7 +6,7 @@ lazy val root = (project in file("."))
   .settings(
     name := "SpinalHDL Schema Gen",
     description := "SpinalHDL Schemetic Generator",
-    organization := "io.github.readon",
+    organization := "com.github.spinalhdl",
     version := SchemaGenVersion.schema,
     crossScalaVersions := SchemaGenVersion.compilers,
     scalaVersion := SchemaGenVersion.compilers(0),
@@ -28,22 +28,20 @@ lazy val root = (project in file("."))
     // Publishing settings
     publishMavenStyle := true,
 
-    sonatypeProjectHosting := Some(GitHubHosting("Readon", "SpinalSchemaGen", "xydarcher@qq.com")),
+    sonatypeProjectHosting := Some(GitHubHosting("SpinalHDL", "SpinalSchemaGen", "xydarcher@qq.com")),
     publishTo := sonatypePublishToBundle.value,
-    sonatypeCredentialHost := sonatypeCentralHost,
-
-    credentials += Credentials(Path.userHome / ".sbt" / "sonatype_credentials"),
+    sonatypeCredentialHost := sonatypeLegacy,
 
     pomIncludeRepository := { _ => false },
 
     licenses := Seq("LGPL3" -> url("https://www.gnu.org/licenses/lgpl.html")),
 
-    homepage := Some(url("https://github.com/Readon/SpinalSchemaGen")),
+    homepage := Some(url("https://github.com/SpinalHDL/SpinalSchemaGen")),
 
     scmInfo := Some(
       ScmInfo(
-        url("https://github.com/Readon/SpinalSchemaGen"),
-        "scm:git@github.com:Readon/SpinalSchemaGen.git"
+        url("https://github.com/SpinalHDL/SpinalSchemaGen"),
+        "scm:git@github.com:SpinalHDL/SpinalSchemaGen.git"
       )
     ),
 
