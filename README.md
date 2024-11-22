@@ -3,7 +3,7 @@
 ## Usage
 1. Add below line to build.sbt
 ``` Scala
-libraryDependencies += "io.github.readon" %% "spinalhdl-schema-gen" % "0.0.4"
+libraryDependencies += "com.github.spinalhdl" %% "spinalhdl-schema-gen" % "0.0.4"
 ```
 2. Use HDElkDiagramGen to generate diagram with HDElk in html.
 ``` Scala
